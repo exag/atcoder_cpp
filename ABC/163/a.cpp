@@ -7,6 +7,7 @@ using P = pair<int, int>;
 int main() {
   int r;
   cin >> r;
-  cout << r * 2 * M_PI << endl;
+  double ans = r * 2 * acos(-1);
+  printf("%.10f\n", ans);
   return 0;
 }

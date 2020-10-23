@@ -7,7 +7,7 @@ using P = pair<int, int>;
 int main() {
   string s;
   cin >> s;
-  if (s[0] == '7' || s[1] == '7' || s[2] == '7')
+  if (s.find("7") != string::npos)
     cout << "Yes" << endl;
   else
     cout << "No" << endl;

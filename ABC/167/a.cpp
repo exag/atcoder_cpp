@@ -7,7 +7,8 @@ using P = pair<int, int>;
 int main() {
   string s, t;
   cin >> s >> t;
-  if (s == t.substr(0, s.length()))
+  t.pop_back();
+  if (s == t)
     cout << "Yes" << endl;
   else
     cout << "No" << endl;

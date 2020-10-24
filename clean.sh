@@ -1,2 +1,2 @@
 #!/usr/local/bin/bash
-find . -name a | xargs rm
+find `dirname $0` -name a | xargs rm

@@ -7,5 +7,6 @@ using P = pair<int, int>;
 int main() {
   char c;
   cin >> c;
-  cout << (char)((int)c + 1) << endl;
+  c++;
+  cout << c << endl;
 }

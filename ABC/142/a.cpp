@@ -7,7 +7,7 @@ using P = pair<int, int>;
 int main() {
   int n;
   cin >> n;
-  int odd = n - n / 2;
+  int odd = (n + 1) / 2;
   double ans = (double)odd / n;
   printf("%.10f\n", ans);
   return 0;

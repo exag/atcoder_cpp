@@ -9,13 +9,7 @@ int main() {
   string s;
   cin >> n >> k >> s;
   string ans;
-  rep(i, n) {
-    if (i + 1 == k) {
-      ans += s[i] + 32;
-    } else {
-      ans += +s[i];
-    }
-  }
-  cout << ans << endl;
+  s[k - 1] = s[k - 1] - 'A' + 'a';
+  cout << s << endl;
   return 0;
 }

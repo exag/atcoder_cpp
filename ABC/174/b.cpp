@@ -7,7 +7,7 @@ using P = pair<int, int>;
 int main() {
   int n;
   ll d;
-  int ans;
+  int ans = 0;
   cin >> n >> d;
   rep(i, n) {
     ll x, y;

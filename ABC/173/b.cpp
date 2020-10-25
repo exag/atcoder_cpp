@@ -7,19 +7,14 @@ using P = pair<int, int>;
 int main() {
   int n;
   cin >> n;
-  map<string, int> submit;
-  submit["AC"] = 0;
-  submit["WA"] = 0;
-  submit["TLE"] = 0;
-  submit["RE"] = 0;
+  map<string, int> cnt;
   rep(i, n) {
     string s;
     cin >> s;
-    submit[s]++;
+    cnt[s]++;
   }
-  cout << "AC x " << submit["AC"] << endl;
-  cout << "WA x " << submit["WA"] << endl;
-  cout << "TLE x " << submit["TLE"] << endl;
-  cout << "RE x " << submit["RE"] << endl;
+  for (string s : {"AC", "WA", "TLE", "RE"}) {
+    cout << s << " x " << cnt[s] << endl;
+  }
   return 0;
 }

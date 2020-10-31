@@ -7,6 +7,7 @@ using P = pair<int, int>;
 int main() {
   string s;
   cin >> s;
-  cout << string(s.size(), 'x') << endl;
+  rep(i, s.size()) s[i] = 'x';
+  cout << s << endl;
   return 0;
 }

@@ -7,11 +7,14 @@ using P = pair<int, int>;
 int main() {
   string s;
   cin >> s;
-  int sum = 0;
-  rep(i, s.size()) { sum += int(s[i]) - 48; }
-  if (sum % 9 == 0)
-    puts("Yes");
+  int x = 0;
+  for (char c : s) {
+    x += (c - '0');
+  }
+  x %= 9;
+  if (x == 0)
+    cout << "Yes" << endl;
   else
-    puts("No");
+    cout << "No" << endl;
   return 0;
 }

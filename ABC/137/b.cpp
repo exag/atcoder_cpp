@@ -9,11 +9,7 @@ int main() {
   cin >> k >> x;
   string ans;
   for (int i = x - k + 1; i < x + k; ++i) {
-    ans += to_string(i);
-    if (i < x + k - 1) {
-      ans += " ";
-    }
+    cout << i << endl;
   }
-  cout << ans << endl;
   return 0;
 }

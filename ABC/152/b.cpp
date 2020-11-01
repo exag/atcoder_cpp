@@ -5,11 +5,10 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() {
-  char a, b;
+  int a, b;
   cin >> a >> b;
-  if (a < b)
-    cout << string(b - '0', a) << endl;
-  else
-    cout << string(a - '0', b) << endl;
+  string s(b, '0' + a);
+  string t(a, '0' + b);
+  cout << min(s, t) << endl;
   return 0;
 }

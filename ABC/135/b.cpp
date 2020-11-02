@@ -9,11 +9,9 @@ int main() {
   cin >> n;
   vector<int> p(n);
   rep(i, n) cin >> p[i];
-  vector<int> r = p;
-  sort(r.begin(), r.end());
   int cnt = 0;
   rep(i, n) {
-    if (p[i] != r[i]) cnt++;
+    if (p[i] != i + 1) cnt++;
   }
   if (cnt <= 2)
     puts("YES");

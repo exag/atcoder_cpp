@@ -7,18 +7,16 @@ using P = pair<int, int>;
 int main() {
   int n, d;
   cin >> n >> d;
-  vector<vector<int>> x;
-  rep(i, n) {
-    vector<int> xd(d);
-    rep(j, d) cin >> xd[j];
-    x.push_back(xd);
-  }
+  vector<vector<int>> x(n, vector<int>(d));
+  rep(i, n) rep(j, d) cin >> x[i][j];
   int ans = 0;
-  rep(i, n) rep(j, n) {
-    if (i >= j) continue;
-    int pd = 0;
-    rep(k, d) pd += pow(abs(x[i][k] - x[j][k]), 2);
-    if (sqrt(pd) == int(sqrt(pd))) ans++;
+  rep(i, n) rep(j, i) {  // j < i
+    int sq = 0;
+    rep(k, d) {
+      int s = x[i][k] - x[j][k];
+      sq += s * s;
+    }
+    if (sqrt(sq) == int(sqrt(sq))) ans++;
   }
   cout << ans << endl;
   return 0;

@@ -8,15 +8,8 @@ int main() {
   int n;
   cin >> n;
   int ans = 0;
-  for (int c = 1; c < n; ++c) {
-    for (int x = 1; x * x <= c; ++x) {
-      if (c % x == 0) {
-        if (x * x == c)
-          ans += 1;
-        else
-          ans += 2;
-      }
-    }
+  for (int a = 1; a <= n; ++a) {
+    ans += (n - 1) / a;
   }
   cout << ans << endl;
   return 0;

@@ -8,15 +8,14 @@ int main() {
   ll n;
   cin >> n;
   set<ll> s;
-  for (int i = 1; i < sqrt(n) + 1; ++i) {
-    if (n % i == 0) {
-      s.insert(i);
-      s.insert(n / i);
+  for (ll x = 1; x * x <= n; ++x) {
+    if (n % x == 0) {
+      s.insert(x);
+      s.insert(n / x);
     }
   }
-  vector<ll> v(s.begin(), s.end());
-  for (ll d : v) {
-    cout << d << endl;
+  for (ll x : s) {
+    cout << x << endl;
   }
   return 0;
 }

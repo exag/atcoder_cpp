@@ -8,14 +8,12 @@ int main() {
   ll n;
   cin >> n;
   set<ll> s;
-  for (ll x = 1; x * x <= n; ++x) {
+  for (ll x = 1; x * x <= n; x++) {
     if (n % x == 0) {
       s.insert(x);
       s.insert(n / x);
     }
   }
-  for (ll x : s) {
-    cout << x << endl;
-  }
+  for (ll x : s) cout << x << endl;
   return 0;
 }

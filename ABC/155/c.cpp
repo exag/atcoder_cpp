@@ -14,16 +14,10 @@ int main() {
     s[si]++;
   }
   int mx = 0;
+  for (auto x : s) mx = max(mx, x.second);
   for (auto x : s) {
-    mx = max(mx, x.second);
+    if (x.second != mx) continue;
+    cout << x.first << endl;
   }
-  set<string> ans;
-  for (auto x : s) {
-    if (x.second == mx) ans.insert(x.first);
-  }
-  for (auto x : ans) {
-    cout << x << endl;
-  }
-
   return 0;
 }

@@ -7,8 +7,7 @@ using P = pair<int, int>;
 int main() {
   int n;
   cin >> n;
-  vector<int> p(n);
-  vector<int> q(n);
+  vector<int> p(n), q(n);
   rep(i, n) cin >> p[i];
   rep(i, n) cin >> q[i];
   vector<int> v(n);

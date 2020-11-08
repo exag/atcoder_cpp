@@ -4,30 +4,25 @@ using namespace std;
 using ll = long long;
 using P = pair<int, int>;
 
-int factorial(int n) {
-  if (n > 0) {
-    return n * factorial(n - 1);
-  } else {
-    return 1;
-  }
-}
-
 int main() {
   int n;
   cin >> n;
   vector<int> x(n), y(n);
   rep(i, n) cin >> x[i] >> y[i];
+  auto dist = [&](int i, int j) {
+    double dx = x[i] - x[j];
+    double dy = y[i] - y[j];
+    return sqrt(dx * dx + dy * dy);
+  };
   vector<int> p(n);
   rep(i, n) p[i] = i;
-  double ans = 0;
+  double len = 0;
+  int cnt = 0;
   do {
-    rep(i, n - 1) {
-      int dx = x[p[i]] - x[p[i + 1]];
-      int dy = y[p[i]] - y[p[i + 1]];
-      double dist = dx * dx + dy * dy;
-      ans += sqrt(dist);
-    }
+    rep(i, n - 1) { len += dist(p[i], p[i + 1]); }
+    cnt++;
   } while (next_permutation(p.begin(), p.end()));
-  printf("%.10f\n", ans / factorial(n));
+  double ans = len / cnt;
+  printf("%.10f\n", ans);
   return 0;
 }

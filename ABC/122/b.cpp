@@ -11,11 +11,13 @@ int main() {
   int ans = 0;
   int now = 0;
   rep(i, s.size()) {
-    bool ok = false;
-    for (char c : ATCG) {
-      if (s[i] == c) ok = true;
-    }
-    if (ok)
+    auto ok = [&](char x) {
+      for (char c : ATCG) {
+        if (x == c) return true;
+      }
+      return false;
+    };
+    if (ok(s[i]))
       now++;
     else
       now = 0;

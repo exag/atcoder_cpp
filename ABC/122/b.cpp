@@ -7,16 +7,19 @@ using P = pair<int, int>;
 int main() {
   string s;
   cin >> s;
+  string ATCG = "ATCG";
   int ans = 0;
+  int now = 0;
   rep(i, s.size()) {
-    for (int l = 1; l <= s.size() - i; ++l) {
-      string sub = s.substr(i, l);
-      bool ok = true;
-      for (char c : sub) {
-        if (c != 'A' && c != 'C' && c != 'G' && c != 'T') ok = false;
-      }
-      if (ok) ans = max(ans, l);
+    bool ok = false;
+    for (char c : ATCG) {
+      if (s[i] == c) ok = true;
     }
+    if (ok)
+      now++;
+    else
+      now = 0;
+    ans = max(ans, now);
   }
   cout << ans << endl;
   return 0;

@@ -7,18 +7,11 @@ using P = pair<int, int>;
 int main() {
   int n;
   cin >> n;
-  while (true) {
-    int t = n;
-    int d1 = t % 10;
-    t /= 10;
-    int d2 = t % 10;
-    t /= 10;
-    int d3 = t % 10;
-    if (d1 == d2 && d2 == d3) {
-      cout << n << endl;
+  for (int x = 111; x <= 999; x += 111) {
+    if (x >= n) {
+      cout << x << endl;
       return 0;
     }
-    n++;
   }
   return 0;
 }

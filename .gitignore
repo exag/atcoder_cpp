@@ -3,3 +3,6 @@
 APG4b/sample.txt
 ABC/sample.txt
 ABC/**/a
+ABC/**/*.in
+ABC/**/*.out
+ABC/**/*.json

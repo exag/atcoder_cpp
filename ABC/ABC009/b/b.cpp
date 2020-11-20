@@ -7,15 +7,13 @@ using P = pair<int, int>;
 int main() {
   int n;
   cin >> n;
-  set<int> st;
-  rep(i, n) {
-    int a;
-    cin >> a;
-    st.insert(a);
-  }
-  vector<int> p;
-  for (int o : st) p.push_back(o);
+  vector<int> p(n);
+  rep(i, n) cin >> p[i];
   sort(p.rbegin(), p.rend());
-  cout << p[1] << endl;
-  return 0;
+  rep(i, n) {
+    if (p[i] != p[0]) {
+      cout << p[i] << endl;
+      break;
+    }
+  }
 }

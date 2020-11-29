@@ -4,28 +4,19 @@ using namespace std;
 using ll = long long;
 using P = pair<int, int>;
 
+int cnt[200010];
+
 int main() {
   int n, k;
   cin >> n >> k;
-  vector<int> a(n);
-  map<int, int> mp;
   rep(i, n) {
     int a;
     cin >> a;
-    mp[a]++;
+    cnt[a - 1]++;
   }
-  int kind = mp.size();
+  sort(cnt, cnt + n);
   int ans = 0;
-  vector<int> v;
-  for (auto x : mp) {
-    v.push_back(x.second);
-  }
-  sort(v.begin(), v.end());
-  for (int x : v) {
-    if (kind <= k) break;
-    ans += x;
-    kind--;
-  }
+  rep(i, n - k) ans += cnt[i];
   cout << ans << endl;
   return 0;
 }

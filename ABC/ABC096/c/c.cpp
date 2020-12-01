@@ -14,20 +14,20 @@ int main() {
   d[1] = make_pair(0, -1);
   d[2] = make_pair(1, 0);
   d[3] = make_pair(-1, 0);
+  int dx[4] = {1, -1, 0, 0};
+  int dy[4] = {0, 0, 1, -1};
   string ans = "Yes";
   rep(y, h) rep(x, w) {
     if (s[y][x] == '.') continue;
-    bool ok = false;
-    for (P di : d) {
-      int dx = di.first;
-      int dy = di.second;
-      int nx = x + dx;
-      int ny = y + dy;
+    bool found = false;
+    rep(i, 4) {
+      int nx = x + dx[i];
+      int ny = y + dy[i];
       if (nx < 0 || nx >= w) continue;
       if (ny < 0 || ny >= h) continue;
-      if (s[ny][nx] == '#') ok = true;
+      if (s[ny][nx] == '#') found = true;
     }
-    if (!ok) ans = "No";
+    if (!found) ans = "No";
   }
   cout << ans << endl;
   return 0;

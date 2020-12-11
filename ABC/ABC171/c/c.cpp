@@ -7,19 +7,10 @@ using P = pair<int, int>;
 int main() {
   ll n;
   cin >> n;
-  int d = 1;
-  ll head = 1;
-  while (true) {
-    ll next = head + pow(26, d);
-    if (next > n) break;
-    head += pow(26, d);
-    d++;
-  }
-  n -= head;
-  string ans = "";
-  rep(i, d) {
-    int m = n % 26;
-    ans.push_back((char)('a' + m));
+  string ans;
+  while (n) {
+    n--;
+    ans += 'a' + n % 26;
     n /= 26;
   }
   reverse(ans.begin(), ans.end());

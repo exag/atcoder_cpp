@@ -9,13 +9,13 @@ int main() {
   int n, q;
   string s;
   cin >> n >> q >> s;
-  vector<int> cnt(n);
+  vector<int> cnt(n + 1);
   int now = 0;
-  srep(i, 1, n) {
-    if (s[i - 1] == 'A' && s[i] == 'C') {
-      now++;
+  rep(i, n) {
+    cnt[i + 1] = cnt[i];
+    if (s[i] == 'A' && s[i + 1] == 'C') {
+      cnt[i + 1]++;
     }
-    cnt[i] = now;
   }
   rep(i, q) {
     int l, r;

@@ -8,21 +8,23 @@ using P = pair<int, int>;
 int main() {
   int n, k;
   cin >> n >> k;
-  vector<int> e(n);
+  vector<int> p(n);
+  rep(i, n) cin >> p[i];
+  rep(i, n) p[i]++;
+  int mx = 0;
+  int s = 0;
+  queue<int> q;
   rep(i, n) {
-    int p;
-    cin >> p;
-    // 期待値を2倍しておく
-    e[i] = p + 1;
+    s += p[i];
+    q.push(p[i]);
+    if (q.size() > k) {
+      s -= q.front();  // 先頭の値を取り出し
+      q.pop();         // 先頭の値を削除
+    }
+    if (q.size() == k) mx = max(mx, s);
   }
-  int now = 0;
-  rep(i, k) now += e[i];
-  int ans = now;
-  srep(i, 1, n - k + 1) {
-    now -= e[i - 1];
-    now += e[i + k - 1];
-    ans = max(ans, now);
-  }
-  printf("%.10f\n", ans / 2.0);
+  double ans = mx;
+  ans /= 2;
+  printf("%.10f\n", ans);
   return 0;
 }

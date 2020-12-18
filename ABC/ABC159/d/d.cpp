@@ -5,20 +5,23 @@ using namespace std;
 using ll = long long;
 using P = pair<int, int>;
 
+ll choose2(ll n) { return n * (n - 1) / 2; }
+
 int main() {
-  ll n;
+  int n;
   cin >> n;
-  vector<ll> a(n);
-  map<ll, ll> cnt;
-  rep(i, n) {
-    ll ai;
-    cin >> ai;
-    ai--;
-    a[i] = ai;
-    cnt[ai]++;
-  }
+  vector<int> a(n);
+  rep(i, n) cin >> a[i];
+  rep(i, n) a[i]--;
+  vector<int> cnt(n);
+  rep(i, n) cnt[a[i]]++;
   ll all = 0;
-  rep(i, n) all += (cnt[i] * (cnt[i] - 1)) / 2;
-  rep(i, n) cout << all - cnt[a[i]] + 1 << endl;
+  rep(i, n) all += choose2(cnt[i]);
+  rep(i, n) {
+    ll ans = all;
+    ans -= choose2(cnt[a[i]]);
+    ans += choose2(cnt[a[i]] - 1);
+    cout << ans << endl;
+  }
   return 0;
 }

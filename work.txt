@@ -1,0 +1,14 @@
+../../ABC185/a && cp ../../../template.cpp a.cpp && code a.cpp
+../../ABC185/b && cp ../../../template.cpp b.cpp && code b.cpp
+../../ABC185/c && cp ../../../template.cpp c.cpp && code c.cpp
+../../ABC185/d && cp ../../../template.cpp d.cpp && code d.cpp
+../../ABC185/e && cp ../../../template.cpp e.cpp && code e.cpp
+../../ABC185/f && cp ../../../template.cpp f.cpp && code f.cpp
+
+acc new ABC186
+cp ../template.cpp ABC186/a/a.cpp && code ABC186/a/a.cpp
+cp ../template.cpp ABC186/b/b.cpp && code ABC186/b/b.cpp
+cp ../template.cpp ABC186/c/c.cpp && code ABC186/c/c.cpp
+cp ../template.cpp ABC186/d/d.cpp && code ABC186/d/d.cpp
+cp ../template.cpp ABC186/e/e.cpp && code ABC186/e/e.cpp
+cp ../template.cpp ABC186/f/f.cpp && code ABC186/f/f.cpp

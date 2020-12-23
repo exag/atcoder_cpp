@@ -1,7 +1,6 @@
 *.out
 */tempCodeRunnerFile.cpp
-APG4b/sample.txt
-ABC/sample.txt
-ABC/**/*.in
-ABC/**/*.out
-ABC/**/*.json
+*/sample.txt
+*/**/*.in
+*/**/*.out
+*/**/*.json

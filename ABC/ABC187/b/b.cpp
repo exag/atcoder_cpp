@@ -14,9 +14,9 @@ int main() {
   rep(i, n) cin >> x[i] >> y[i];
   int ans = 0;
   rep(j, n) rep(i, j) {
-    double dx = x[j] - x[i];
-    double dy = y[j] - y[i];
-    if (-1.0 <= (dy / dx) && (dy / dx) <= 1.0) ans++;
+    int dx = abs(x[j] - x[i]);
+    int dy = abs(y[j] - y[i]);
+    if (dy <= dx) ans++;
   }
   cout << ans << endl;
   return 0;

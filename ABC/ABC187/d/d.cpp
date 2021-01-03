@@ -10,20 +10,21 @@ using P = pair<ll, ll>;
 int main() {
   int n;
   cin >> n;
-  vector<ll> a(n), b(n);
-  rep(i, n) cin >> a[i] >> b[i];
-  ll sma = 0;
-  rep(i, n) sma += a[i];
-  vector<ll> ab;
-  rep(i, n) ab.emplace_back(a[i] + a[i] + b[i]);
-  sort(ab.rbegin(), ab.rend());
-  ll takahashi = -sma;
+  ll aotaka = 0;
+  vector<ll> v(n);
   rep(i, n) {
-    takahashi += ab[i];
-    if (takahashi > 0) {
-      cout << i + 1 << endl;
-      return 0;
-    }
+    ll a, b;
+    cin >> a >> b;
+    aotaka += a;
+    v[i] = a * 2 + b;
   }
+  sort(v.rbegin(), v.rend());
+  int ans = 0;
+  rep(i, n) {
+    ans++;
+    aotaka -= v[i];
+    if (aotaka < 0) break;
+  }
+  cout << ans << endl;
   return 0;
 }

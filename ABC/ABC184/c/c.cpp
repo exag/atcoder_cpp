@@ -7,24 +7,24 @@ using namespace std;
 using ll = long long;
 using P = pair<int, int>;
 
-int solve() {
-  int x1, y1, x2, y2;
-  cin >> x1 >> y1 >> x2 >> y2;
+int solve(int x, int y) {
   // 0
-  if (x1 == x2 && y1 == y2) return 0;
+  if (0 == x && 0 == y) return 0;
   // 1
-  if (x1 + y1 == x2 + y2) return 1;
-  if (x1 - y1 == x2 - y2) return 1;
-  if (abs(x1 - x2) + abs(y1 - y2) <= 3) return 1;
+  if (0 == x + y) return 1;
+  if (0 == x - y) return 1;
+  if (abs(x) + abs(y) <= 3) return 1;
   // 2
-  if ((x1 + y1) % 2 == (x2 + y2) % 2) return 2;
-  if (abs(x1 - x2) + abs(y1 - y2) <= 6) return 2;
-  if (abs((x1 + y1) - (x2 + y2)) <= 3) return 2;
-  if (abs((x1 - y1) - (x2 - y2)) <= 3) return 2;
+  if (0 == (x + y) % 2) return 2;
+  if (abs(x) + abs(y) <= 6) return 2;
+  if (abs((x + y)) <= 3) return 2;
+  if (abs((x - y)) <= 3) return 2;
   return 3;
 }
 
 int main() {
-  cout << solve() << endl;
+  int x1, y1, x2, y2;
+  cin >> x1 >> y1 >> x2 >> y2;
+  cout << solve(x2 - x1, y2 - y1) << endl;
   return 0;
 }

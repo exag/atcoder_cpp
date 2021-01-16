@@ -7,6 +7,8 @@ using namespace std;
 using ll = long long;
 using P = pair<int, int>;
 
+// 素因数分解
+// エラトステネスの篩
 struct Sieve {
   int n;
   vector<int> f, primes;

@@ -17,6 +17,7 @@ int main() {
   rep(i, n) ca[i + 1] = ca[i] + a[i];
   rep(i, m) cb[i + 1] = cb[i] + b[i];
   int ans = 0;
+  // 二分探索
   auto bs = [&](int x) {
     int l = 0;
     int r = m + 1;

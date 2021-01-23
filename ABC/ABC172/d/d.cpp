@@ -13,15 +13,17 @@ int main() {
   int n;
   cin >> n;
   ll ans = 0;
-  vector<int> d(n + 1);
+  // vector<int> d(n + 1);
   for (int i = 1; i <= n; ++i) {
-    for (int j = i; j <= n; j += i) {
-      d[j]++;
-    }
+    // for (int j = i; j <= n; j += i) {
+    //   d[j]++;
+    // }
+    ll r = n / i;
+    ans += f(r) * i;
   }
-  for (int i = 1; i <= n; ++i) {
-    ans += ll(i) * d[i];
-  }
+  // for (int i = 1; i <= n; ++i) {
+  //   ans += ll(i) * d[i];
+  // }
   cout << ans << endl;
   return 0;
 }

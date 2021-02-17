@@ -13,12 +13,6 @@ int main() {
   vector<int> a(n);
   rep(i, n) cin >> a[i];
   int cnt = 0;
-  rep(i, n) {
-    if (a[i] != x) {
-      cout << a[i] << endl;
-      cnt++;
-    }
-  }
-  if (cnt == 0) cout << endl;
+  rep(i, n) if (a[i] != x) cout << a[i] << endl;
   return 0;
 }

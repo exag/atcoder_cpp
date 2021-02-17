@@ -14,17 +14,11 @@ int main() {
   rep(i, h) rep(j, w) cin >> s[i][j];
   int ans = 0;
   rep(i, h - 1) rep(j, w - 1) {
-    int white = 0;
-    int black = 0;
-    if (s[i][j] == '#') black++;
-    if (s[i][j] == '.') white++;
-    if (s[i][j + 1] == '#') black++;
-    if (s[i][j + 1] == '.') white++;
-    if (s[i + 1][j] == '#') black++;
-    if (s[i + 1][j] == '.') white++;
-    if (s[i + 1][j + 1] == '#') black++;
-    if (s[i + 1][j + 1] == '.') white++;
-    if ((white == 1 && black == 3) || (white == 3 && black == 1)) {
+    int cnt = 0;
+    rep(di, 2) rep(dj, 2) {
+      if (s[i + di][j + dj] == '#') cnt++;
+    }
+    if (cnt == 1 || cnt == 3) {
       ans++;
     }
   }

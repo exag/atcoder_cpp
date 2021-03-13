@@ -10,15 +10,14 @@ using P = pair<int, int>;
 int main() {
   ll n;
   cin >> n;
-  int x = sqrt(n) + 1;
-  set<ll> st;
-  srep(a, 2, x + 1) {
-    srep(b, 2, x + 1) {
-      ll x = pow(a, b);
-      if (x > n) break;
-      st.insert(x);
+  set<ll> s;
+  for (ll a = 2; a * a <= n; a++) {
+    ll x = a * a;
+    while (x <= n) {
+      s.insert(x);
+      x *= a;
     }
   }
-  cout << n - st.size() << endl;
+  cout << n - s.size() << endl;
   return 0;
 }
